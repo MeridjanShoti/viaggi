@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row, Spinner } from "react-bootstrap";
+import { Link } from "react-router";
 
 function Dipendenti() {
   const [dipendenti, setDipendenti] = useState(null);
@@ -80,19 +81,21 @@ function Dipendenti() {
             dipendenti.map((dipendente) => (
               <Col key={dipendente.id} className="gy-3">
                 <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={
-                      dipendente.avatar ||
-                      "https://static.vecteezy.com/ti/vettori-gratis/p1/2318271-icona-profilo-utente-vettoriale.jpg"
-                    }
-                  />
+                  <Link to={`/dipendenti/${dipendente.id}`}>
+                    <Card.Img
+                      variant="top"
+                      src={
+                        dipendente.avatar ||
+                        "https://static.vecteezy.com/ti/vettori-gratis/p1/2318271-icona-profilo-utente-vettoriale.jpg"
+                      }
+                    />
+                  </Link>
                   <Card.Body className="d-flex flex-column">
                     <Card.Title>{dipendente.username}</Card.Title>
                     <Card.Text>
-                      <p>nome: {dipendente.nome}</p>
-                      <p>cognome: {dipendente.cognome}</p>
-                      <p>email: {dipendente.email}</p>
+                      <span>nome: {dipendente.nome}</span>
+                      <span>cognome: {dipendente.cognome}</span>
+                      <span>email: {dipendente.email}</span>
                     </Card.Text>
                     <div className="mx-auto">
                       <Button variant="primary m-2" onClick={() => uploadAvatar(dipendente.id)}>

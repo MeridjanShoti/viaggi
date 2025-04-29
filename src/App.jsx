@@ -4,6 +4,7 @@ import MyHomePage from "./component/home/MyHomePage";
 import MyNavBar from "./component/navbar/MyNavbar";
 import Dipendenti from "./component/dipendenti/Dipendenti";
 import Login from "./component/login/Login";
+import DipendentiDetails from "./component/dipendenti/DipendentiDetails";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/dipendenti" element={<Dipendenti />} />
           <Route path="/prenotazioni" element={"prenotazioni"} />
           <Route path="*" element={<MyHomePage />} />
+          <Route path="/dipendenti/:id" element={<DipendentiDetails />} />
         </Routes>
       </BrowserRouter>
     </>
