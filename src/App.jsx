@@ -8,6 +8,7 @@ import DipendentiDetails from "./component/dipendenti/DipendentiDetails";
 import Registrazione from "./component/login/Registrazione";
 import Profile from "./component/dipendenti/profile";
 import Modifica from "./component/dipendenti/Modifica";
+import PrenotaViaggio from "./component/viaggi/PrenotaViaggio";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MyHomePage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/prenotaViaggio" element={"prenotaViaggio"} />
+          <Route path="/prenotaViaggio" element={<PrenotaViaggio />} />
           <Route path="/dipendenti" element={<Dipendenti />} />
           <Route path="/prenotazioni" element={"prenotazioni"} />
           <Route path="*" element={<MyHomePage />} />

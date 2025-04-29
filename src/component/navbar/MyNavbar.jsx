@@ -30,14 +30,14 @@ function MyNavbar() {
             <Link to="/" className="nav-link">
               Home
             </Link>
-            <Link to="/prenotaViaggio" className="nav-link">
-              Viaggi
+            <Link to={user ? "/prenotaViaggio" : "/login"} className="nav-link">
+              Prenota
             </Link>
             <Link to="/dipendenti" className="nav-link">
               Dipendenti
             </Link>
             <Link to="/prenotazioni" className="nav-link">
-              prenotazioni
+              Viaggi prenotati
             </Link>
           </Nav>
           {user && (
