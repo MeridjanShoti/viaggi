@@ -1,7 +1,23 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import lumon from "../../assets/img/lumon.png";
 import { Link } from "react-router";
+import { useEffect, useState } from "react";
 function MyNavbar() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const token = sessionStorage.getItem("token");
+    const apiUrl = import.meta.env.VITE_API_URL;
+    fetch(`${apiUrl}/dipendenti/current-user`, { method: "GET", headers: { Authorization: `Bearer ${token}` } })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setUser(data);
+      })
+      .catch((error) => {
+        console.error("Errore nella fetch dei dipendenti navbar", error);
+        alert(error);
+      });
+  }, []);
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -24,6 +40,11 @@ function MyNavbar() {
               prenotazioni
             </Link>
           </Nav>
+          {user && (
+            <Link to="/profile">
+              <img src={user.avatar} alt="user" height={50} />
+            </Link>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>

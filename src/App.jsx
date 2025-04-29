@@ -5,6 +5,9 @@ import MyNavBar from "./component/navbar/MyNavbar";
 import Dipendenti from "./component/dipendenti/Dipendenti";
 import Login from "./component/login/Login";
 import DipendentiDetails from "./component/dipendenti/DipendentiDetails";
+import Registrazione from "./component/login/Registrazione";
+import Profile from "./component/dipendenti/profile";
+import Modifica from "./component/dipendenti/Modifica";
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
           <Route path="/prenotazioni" element={"prenotazioni"} />
           <Route path="*" element={<MyHomePage />} />
           <Route path="/dipendenti/:id" element={<DipendentiDetails />} />
+          <Route path="/register" element={<Registrazione />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/modifica" element={<Modifica />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -93,9 +93,9 @@ function Dipendenti() {
                   <Card.Body className="d-flex flex-column">
                     <Card.Title>{dipendente.username}</Card.Title>
                     <Card.Text>
-                      <span>nome: {dipendente.nome}</span>
-                      <span>cognome: {dipendente.cognome}</span>
-                      <span>email: {dipendente.email}</span>
+                      <span>nome: {dipendente.nome}</span> <br />
+                      <span>cognome: {dipendente.cognome}</span> <br />
+                      <span>email: {dipendente.email}</span> <br />
                     </Card.Text>
                     <div className="mx-auto">
                       <Button variant="primary m-2" onClick={() => uploadAvatar(dipendente.id)}>
