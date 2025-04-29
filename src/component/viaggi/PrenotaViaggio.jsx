@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Button, Form, FormLabel } from "react-bootstrap";
-import { data } from "react-router";
 
 function PrenotaViaggio() {
   const [user, setUser] = useState(null);

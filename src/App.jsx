@@ -9,6 +9,7 @@ import Registrazione from "./component/login/Registrazione";
 import Profile from "./component/dipendenti/profile";
 import Modifica from "./component/dipendenti/Modifica";
 import PrenotaViaggio from "./component/viaggi/PrenotaViaggio";
+import ViaggiPrenotati from "./component/viaggi/ViaggiPrenotati";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/prenotaViaggio" element={<PrenotaViaggio />} />
           <Route path="/dipendenti" element={<Dipendenti />} />
-          <Route path="/prenotazioni" element={"prenotazioni"} />
+          <Route path="/prenotazioni" element={<ViaggiPrenotati />} />
           <Route path="*" element={<MyHomePage />} />
           <Route path="/dipendenti/:id" element={<DipendentiDetails />} />
           <Route path="/register" element={<Registrazione />} />
