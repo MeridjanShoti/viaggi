@@ -4,6 +4,7 @@ import { Button, Container, Spinner } from "react-bootstrap";
 function Profile() {
   const [user, setUser] = useState(null);
   function fetchUser() {
+    //commento per ricommittare
     const token = sessionStorage.getItem("token");
     const apiUrl = import.meta.env.VITE_API_URL;
     fetch(`${apiUrl}/dipendenti/current-user`, { method: "GET", headers: { Authorization: `Bearer ${token}` } })
@@ -32,6 +33,7 @@ function Profile() {
           <p>email: {user.email}</p>
           <p>username: {user.username}</p>
           <img src={user.avatar} alt="avatar" />
+
           <br />
           <Button
             className="btn btn-primary mt-3"
