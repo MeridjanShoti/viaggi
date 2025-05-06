@@ -34,7 +34,8 @@ function Dipendenti() {
   }
   function deleteDipendente(id) {
     if (confirm("sei sicuro di voler reintegrare questo dipendente?")) {
-      fetch(`http://localhost:8080/dipendenti/${id}`, {
+      const apiUrl = import.meta.env.VITE_API_URL;
+      fetch(`${apiUrl}/dipendenti/${id}`, {
         method: "DELETE",
       })
         .then(() => {
@@ -56,7 +57,8 @@ function Dipendenti() {
       const file = input.files[0];
       const formData = new FormData();
       formData.append("file", file);
-      fetch(`http://localhost:8080/dipendenti/${id}/upload`, {
+      const apiUrl = import.meta.env.VITE_API_URL;
+      fetch(`${apiUrl}/dipendenti/${id}/upload`, {
         method: "PATCH",
         body: formData,
       })
