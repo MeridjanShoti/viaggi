@@ -6,7 +6,7 @@ import Dipendenti from "./component/dipendenti/Dipendenti";
 import Login from "./component/login/Login";
 import DipendentiDetails from "./component/dipendenti/DipendentiDetails";
 import Registrazione from "./component/login/Registrazione";
-import Profile from "./component/dipendenti/profile";
+import Profile from "./component/dipendenti/Profile";
 import Modifica from "./component/dipendenti/Modifica";
 import PrenotaViaggio from "./component/viaggi/PrenotaViaggio";
 import ViaggiPrenotati from "./component/viaggi/ViaggiPrenotati";
