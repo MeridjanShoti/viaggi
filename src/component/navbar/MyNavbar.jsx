@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown, Spinner } from "react-bootstrap";
 import lumon from "../../assets/img/lumon.png";
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
@@ -42,7 +42,15 @@ function MyNavbar() {
           </Nav>
           {user && (
             <Link to="/profile">
-              <img src={user.avatar} alt="user" height={50} />
+              <img
+                src={
+                  user
+                    ? user.avatar
+                    : "https://imebehavioralhealth.com/wp-content/uploads/2021/10/user-icon-placeholder-1.png"
+                }
+                alt="user"
+                height={50}
+              />
             </Link>
           )}
         </Navbar.Collapse>
