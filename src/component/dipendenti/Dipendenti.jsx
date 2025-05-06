@@ -11,7 +11,8 @@ function Dipendenti() {
   function fetchDipendenti() {
     //abbiamo recuperato il token dal session storage
     const token = sessionStorage.getItem("token");
-    fetch("http://localhost:8080/dipendenti?size=100", {
+    const apiUrl = import.meta.env.VITE_API_URL;
+    fetch(apiUrl + "/dipendenti?size=100", {
       //abbiamo aggiunto gli headers per poter mettere il token recuperato dal session storage
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
